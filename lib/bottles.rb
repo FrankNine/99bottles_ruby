@@ -1,4 +1,7 @@
 class Bottles
+    def song
+        return verses(99, 0)
+    end
     def verses(startLine, endLine)
         result = ""
         for i in (startLine).downto(endLine)
