@@ -1,8 +1,8 @@
 class Bottles
     def verse(lineNumber)
-        return "99 bottles of beer on the wall, " +
-      "99 bottles of beer.\n" +
+        return lineNumber.to_s + " bottles of beer on the wall, " +
+      lineNumber.to_s + " bottles of beer.\n" +
       "Take one down and pass it around, " +
-      "98 bottles of beer on the wall.\n";
+      (lineNumber - 1).to_s + " bottles of beer on the wall.\n";
     end
 end
