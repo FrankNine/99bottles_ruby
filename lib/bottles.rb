@@ -1,10 +1,14 @@
 class Bottles
     def verse(lineNumber)
         bottlesOnTheWall = lineNumber;
-        bottlesRemainOnTheWall = lineNumber - 1; 
+        bottlesRemainOnTheWall = lineNumber - 1;
+        if bottlesRemainOnTheWall == -1
+            bottlesRemainOnTheWall = 99
+        end
+
         return printBottle(bottlesOnTheWall) + " of beer on the wall, " +
-               printBottle(bottlesOnTheWall) + " of beer.\n" +
-               "Take " + (bottlesOnTheWall != 1 ? "one" : "it") + " down and pass it around, " +
+               printBottle(bottlesOnTheWall).downcase + " of beer.\n" +
+               printOperation(bottlesOnTheWall) +
                printBottle(bottlesRemainOnTheWall).downcase + " of beer on the wall.\n";
     end
 
@@ -15,6 +19,16 @@ class Bottles
             return "1 bottle"
         else
             return "No more bottles"
+        end
+    end
+
+    def printOperation(count)
+        if 1 < count
+            return "Take one down and pass it around, "
+        elsif count == 1
+            return "Take it down and pass it around, "
+        else
+            return "Go to the store and buy some more, "
         end
     end
 end
