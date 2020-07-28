@@ -1,4 +1,13 @@
 class Bottles
+    def verses(startLine, endLine)
+        result = ""
+        for i in (startLine).downto(endLine)
+            result += verse(i)
+            result += "\n"
+        end
+        return result.chomp
+    end
+
     def verse(lineNumber)
         bottlesOnTheWall = lineNumber;
         bottlesRemainOnTheWall = lineNumber - 1;
